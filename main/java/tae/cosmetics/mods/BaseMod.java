@@ -23,7 +23,7 @@ public class BaseMod implements Globals {
 		
 	static {
 		// declare an array of key bindings
-		keyBindings = new KeyBinding[10]; 
+		keyBindings = new KeyBinding[11];
 		
 		// instantiate the key bindings
 		keyBindings[0] = new KeyBinding("Open Booktitle Mod GUI", Keyboard.CHAR_NONE, "TAE Cosmetics");
@@ -42,7 +42,8 @@ public class BaseMod implements Globals {
 		keyBindings[8] = new KeyBinding("Create Packet Marker", 0, "TAE Cosmetics");
 		
 		keyBindings[9] = new KeyBinding("View Maps and Books", 0, "TAE Cosmetics");
-		
+
+		keyBindings[10] = new KeyBinding("Dupe", Keyboard.CHAR_NONE, "TAE Cosmetics");
 		// register all the key bindings
 		for (int i = 0; i < keyBindings.length; ++i) 
 		{
@@ -80,7 +81,14 @@ public class BaseMod implements Globals {
 			VisualizePacketsMod.toggle();
 		} else if(keyBindings[8].isPressed()) {
 			VisualizePacketsMod.addMarker(new TimestampModule(Instant.now().toEpochMilli()));
+		} else if(keyBindings[10].isPressed()) {
+			if(!Dupe.enabled) {
+				Dupe.launch();
+			} else {
+				Dupe.off();
+			}
 		}
+
 	}
 	
 	public static int getHoverKey() {
