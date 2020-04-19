@@ -5,4 +5,5 @@ Avaliable mods include: Unicode keyboard, stalker mod (see players in 2b2t queue
 
 Please note that this is a BETA version of the mod and errors may occur. Please make an issue or message TheAlphaEpsilon#7015 on https://discord.gg/myqngze for help or information.
 
-Added dupe
+Added dupe for when it works
+
