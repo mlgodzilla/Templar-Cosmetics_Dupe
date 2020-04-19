@@ -17,12 +17,20 @@ public class ModifiedFreecam extends BaseMod {
 
 	private static Vec3d pos = Vec3d.ZERO;
 	private static Vec2f pitchyaw = Vec2f.ZERO;
-	  
-	  private static boolean isRidingEntity;
+
+	public static boolean isIsRidingEntity() {
+		return isRidingEntity;
+	}
+
+	private static boolean isRidingEntity;
 	
 	  public static boolean enabled = false;
-	  
-	  private static Entity ridingEntity;
+
+	public static Entity getRidingEntity() {
+		return ridingEntity;
+	}
+
+	private static Entity ridingEntity;
 	  
 	  private static EntityOtherPlayerMP originalPlayer;
 	  
@@ -86,7 +94,11 @@ public class ModifiedFreecam extends BaseMod {
 	      isRidingEntity = false;
 	    }
 	  }
-	  
+
+	  public static EntityOtherPlayerMP getOriginalPlayer(){
+	  	return originalPlayer;
+	  }
+
 	  @SubscribeEvent
 	  public void onLocalPlayerUpdate(LivingUpdateEvent event) {
 	    if (!enabled || mc.player == null || !event.getEntity().equals(mc.player)) {
